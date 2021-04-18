@@ -12,9 +12,15 @@ function load(count) {
   }
 }
 
+const options = {
+  root: null,
+  rootMargin: '0px',
+  threshold: 0.0
+}
+
 load(10);
 
-let observer = new IntersectionObserver((entries, observe) => {
+const observer = new IntersectionObserver((entries, observe) => {
   entries.forEach(entry => {
     if (entry.intersectionRatio) {
       const elements = document.querySelectorAll('.el');
@@ -24,7 +30,7 @@ let observer = new IntersectionObserver((entries, observe) => {
       load(ord + 10);
     }
   })
-});
+}, options);
 
 observer.observe(last);
 

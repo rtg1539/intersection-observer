@@ -14,11 +14,13 @@ function load(count) {
 
 load(10);
 
-let observer = new IntersectionObserver(entries => {
+let observer = new IntersectionObserver((entries, observe) => {
   entries.forEach(entry => {
-    const lastChild = Array.from(document.querySelectorAll('.el')).pop();
     if (entry.intersectionRatio) {
-      const ord = parseInt(lastChild.getAttribute('ord'), 10);
+      const elements = document.querySelectorAll('.el');
+      const lastEl = Array.from(elements).pop();
+      const ord = parseInt(lastEl.getAttribute('ord'), 10);
+
       load(ord + 10);
     }
   })

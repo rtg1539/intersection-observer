@@ -1,5 +1,3 @@
-const el = document.querySelector('.el');
-
 const options = {
   root: null,
   rootMargin: '0px',
@@ -18,13 +16,15 @@ const observer = new IntersectionObserver((entries, observe) => {
       el.dataset.ord = `${ord + 1}`;
 
       entry.boundingClientRect
-
       target.after(el);
+
       observer.observe(el);
       observer.unobserve(target);
     }
   })
 }, options);
+
+const el = document.querySelector('.el');
 
 observer.observe(el);
 

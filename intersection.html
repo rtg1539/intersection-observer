@@ -3,10 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <title>Title</title>
+  <style>
+    .el, #last {
+      height: 100px;
+      border: 1px solid;
+      margin: 10px;
+    }
+    #sub {
+      width: 400px;
+      height: 400px;
+      border: 1px solid;
+      margin: 10px;
+      overflow-y: scroll;
+    }
+  </style>
 </head>
 <body>
   <div id="container">
-    <div id="last" style="height: 100px; background-color: rebeccapurple"></div>
+    <!--<div id="sub">
+      <div class="el">a</div>
+      <div class="el">a</div>
+      <div class="el">a</div>
+      <div class="el">a</div>
+      <div class="el">a</div>
+      <div class="el">a</div>
+    </div>-->
+    <div id="last" style="background-color: rebeccapurple"></div>
   </div>
   <script src="intersection.js"></script>
 </body>

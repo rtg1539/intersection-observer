@@ -9,8 +9,15 @@ function load(target, count) {
   }
 }
 
+const last = document.querySelector('#last');
+// const subLast = document.querySelector('#sub-last');
+
+load(last, 10);
+// load(subLast, 10);
+
 const options = {
   root: null,
+  // root: document.getElementById('sub'),
   rootMargin: '0px',
   threshold: 0.0
 }
@@ -27,11 +34,8 @@ const observer = new IntersectionObserver((entries, observe) => {
   })
 }, options);
 
-const last = document.querySelector('#last');
-
-load(last, 10);
-
 observer.observe(last);
+// observer.observe(subLast);
 
 
 

@@ -7,7 +7,7 @@ const options = {
 const observer = new IntersectionObserver((entries, observe) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      const target = entry.target;
+      const { target } = entry;
       const ord = parseInt(target.dataset.ord, 10);
       const el = document.createElement('div');
 
@@ -15,7 +15,7 @@ const observer = new IntersectionObserver((entries, observe) => {
       el.innerText = `${ord + 1}`;
       el.dataset.ord = `${ord + 1}`;
 
-      entry.boundingClientRect
+      // entry.boundingClientRect
       target.after(el);
 
       observer.observe(el);

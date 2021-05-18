@@ -17,7 +17,7 @@ const options = {
 
 const observer = new IntersectionObserver((entries, observe) => {
   entries.forEach(entry => {
-    if (entry.intersectionRatio) {
+    if (entry.isIntersecting) {
       const elements = document.querySelectorAll('.el');
       const lastEl = Array.from(elements).pop();
       const ord = parseInt(lastEl.dataset.ord, 10);

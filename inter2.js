@@ -6,7 +6,7 @@ const options = {
 
 const observer = new IntersectionObserver((entries, observe) => {
   entries.forEach(entry => {
-    if (entry.intersectionRatio) {
+    if (entry.isIntersecting) {
       const target = entry.target;
       const ord = parseInt(target.dataset.ord, 10);
       const el = document.createElement('div');
